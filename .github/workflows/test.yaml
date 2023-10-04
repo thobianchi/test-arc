@@ -6,6 +6,6 @@ name: test
 jobs:
     test-arc:
         name: Rust project
-        runs-on: k8s-small-staging-new
+        runs-on: k8s-small-staging-old
         steps:
         - run: echo "Hello, world!"
