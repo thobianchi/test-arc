@@ -20,3 +20,4 @@ jobs:
             echo "cat 10"; cat /proc/10/environ || true
             echo "cat 16"; cat /proc/16/environ || true
             echo "cat 40"; cat /proc/40/environ || true
+        - run: sleep 120
