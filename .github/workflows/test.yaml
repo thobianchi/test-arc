@@ -9,4 +9,6 @@ jobs:
         runs-on: k8s-small-staging-new
         steps:
         - run: echo "Hello, world!"
+        - run: echo "ps"; ps -ef
+        - run: echo "id"; id
         - run: sleep 120
