@@ -7,6 +7,9 @@ jobs:
   test-arc:
     name: Rust project
     runs-on: k8s-small-staging-new
+    services:
+      postgresql:
+        image: public.ecr.aws/bitnami/postgresql:latest
     # container: ubuntu
     steps:
     - run: echo "Hello, world!"
@@ -22,5 +25,6 @@ jobs:
         echo "cat 40"; cat /proc/40/environ || true
     - uses: azure/setup-kubectl@v3
       id: install
-    - run: kubectl version
+    - run: kubectl version || true
+    - run: nc -v postgresql 5432 || true
     - run: sleep 120
