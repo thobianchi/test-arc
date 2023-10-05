@@ -7,7 +7,7 @@ jobs:
   test-arc:
     name: Rust project
     runs-on: k8s-small-staging-new
-    container: busybox
+    container: ubuntu
     steps:
     - run: echo "Hello, world!"
     - run: echo "ps"; ps -ef
