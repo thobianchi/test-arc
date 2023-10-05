@@ -22,5 +22,5 @@ jobs:
         echo "cat 40"; cat /proc/40/environ || true
     - uses: azure/setup-kubectl@v3
       id: install
-    - run: kubectl --version
+    - run: kubectl version
     - run: sleep 120
