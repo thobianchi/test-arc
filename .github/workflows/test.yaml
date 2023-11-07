@@ -5,7 +5,10 @@ name: test
 
 jobs:
   test-arc:
-    name: Rust project
+    strategy:
+      matrix:
+        name: [ test1 , test2, test3 ]
+    name: ${{ matrix.name }}
     runs-on: k8s-small-staging-new
     services:
       postgresql:
